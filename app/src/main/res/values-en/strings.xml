@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Laboratoire1-JBergeron</string>
+    <string name="app_name">Laboratory1-JBergeron</string>
     <string name="et_courriel">Your email</string>
     <string name="et_motDePasse">Your password</string>
     <string name="chk_afficherMdP">Display your password</string>
     <string name="btn_ValiderMdP">Validate your password</string>
-    <string name="tv_afficherMessage">Your password is valid</string>
+    <string name="mdpValide">Password is valid</string>
+    <string name="mdpInvalide">Password is invalid</string>
 </resources>

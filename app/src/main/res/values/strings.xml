@@ -4,6 +4,6 @@
     <string name="et_motDePasse">Votre mot de passe</string>
     <string name="chk_afficherMdP">Afficher votre mot de passe</string>
     <string name="btn_ValiderMdP">Valider mot de passe</string>
-    <string name="tv_afficherMessage">Le mot de passe est valide</string>
-
+    <string name="mdpValide">Le mot de passe est valide</string>
+    <string name="mdpInvalide">Le mot de passe est invalide</string>
 </resources>

@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
         EditText et_motDePasse = (EditText) findViewById(R.id.et_motDePasse);
         TextView tv_afficherMessage = (TextView) findViewById(R.id.tv_afficherMessage);
 
-
-        //char[] caractereSpeciaux = new char[]{'@', '#', '$', '%', '&', '(', ')', '[', ']', '{', '}', '_', '=', '<', '>', '+', '-', '!', '?', '*', '/', '|', ':', ';', '.', ',', '‘', '\"', '~', '^'};
         boolean contientCaractereSpeciaux = et_motDePasse.getText().toString().matches(".*[@#$%&\\(\\)\\[\\]\\{\\}\\_\\=\\<\\>\\+\\-\\!\\?\\*\\/\\|\\:\\;\\.\\,\\‘\"\\~\\^]+.*");
         boolean longueurValide = et_motDePasse.getText().toString().length() >= 10;
         boolean majusculePresente = et_motDePasse.getText().toString().matches(".*[A-Z]+.*");
@@ -33,10 +31,13 @@ public class MainActivity extends AppCompatActivity {
         boolean chiffrePresent = et_motDePasse.getText().toString().matches(".*[0-9]+.*");
 
         if (contientCaractereSpeciaux && longueurValide && majusculePresente && minusculePresente && chiffrePresent) {
-            tv_afficherMessage.setText("Le mot de passe est valide");
+            tv_afficherMessage.setText(getResources().getText(R.string.mdpValide));
+            tv_afficherMessage.setTextColor(getResources().getColor(R.color.vert));
 
         } else {
-            tv_afficherMessage.setText("Le mot de passe n'est pas valide");
+            tv_afficherMessage.setText(getResources().getText(R.string.mdpInvalide));
+            tv_afficherMessage.setTextColor(getResources().getColor(R.color.rouge));
+
         }
     }
 
