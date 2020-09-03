@@ -24,13 +24,14 @@ public class MainActivity extends AppCompatActivity {
         EditText et_motDePasse = (EditText) findViewById(R.id.et_motDePasse);
         TextView tv_afficherMessage = (TextView) findViewById(R.id.tv_afficherMessage);
 
+        boolean exclureCaractere = et_motDePasse.getText().toString().matches("^[A-Za-z0-9@#$%&\\(\\)\\[\\]\\{\\}\\_\\=\\<\\>\\+\\-\\!\\?\\*\\/\\|\\:\\;\\.\\,\\‘\"\\~\\^]*$");
         boolean contientCaractereSpeciaux = et_motDePasse.getText().toString().matches(".*[@#$%&\\(\\)\\[\\]\\{\\}\\_\\=\\<\\>\\+\\-\\!\\?\\*\\/\\|\\:\\;\\.\\,\\‘\"\\~\\^]+.*");
         boolean longueurValide = et_motDePasse.getText().toString().length() >= 10;
         boolean majusculePresente = et_motDePasse.getText().toString().matches(".*[A-Z]+.*");
         boolean minusculePresente = et_motDePasse.getText().toString().matches(".*[a-z]+.*");
         boolean chiffrePresent = et_motDePasse.getText().toString().matches(".*[0-9]+.*");
 
-        if (contientCaractereSpeciaux && longueurValide && majusculePresente && minusculePresente && chiffrePresent) {
+        if (contientCaractereSpeciaux && longueurValide && majusculePresente && minusculePresente && chiffrePresent && exclureCaractere) {
             tv_afficherMessage.setText(getResources().getText(R.string.mdpValide));
             tv_afficherMessage.setTextColor(getResources().getColor(R.color.vert));
 
